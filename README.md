@@ -22,6 +22,8 @@ Reactive avoidance using repulsive forces.
 ### v5 — Changing Environment
 Dynamic obstacles with continuous decision-making.
 
+![v5](outputs/figure_5.png)
+
 ## Architecture
 
 - **Observer**: Position, targets, environment
