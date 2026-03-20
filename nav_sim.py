@@ -19,3 +19,4 @@ def figure_01_linear_motion():
 
 if __name__ == "__main__":
     figure_01_linear_motion()
+
