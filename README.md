@@ -12,3 +12,18 @@ This repository contains lightweight simulations, visuals, and reference figures
 - position estimation
 - early navigation simulations
 - visual concept outputs
+
+## Figures
+
+Early visual outputs from the prototype are stored in the `outputs/` folder.
+
+- Figure 01 — Signal field
+- Figure 02 — Position grid
+- Figure 03 — Linear motion
+- Figure 04 — Reference stars
+- Figure 05 — Trilateration
+- Figure 06 — Time delay
+- Figure 07 — Noise model
+- Figure 08 — Estimation pass
+- Figure 09 — Dial concept
+- Figure 10 — Navigation overview
