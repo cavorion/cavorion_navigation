@@ -1,11 +1,27 @@
-def figure_09_dial_concept():
-    theta = np.linspace(0, 2 * np.pi, 400)
-    r = np.ones_like(theta)
+def figure_10_navigation_overview():
+    fig, ax = plt.subplots(figsize=(10, 6))
 
-    plt.figure(figsize=(7, 7))
-    ax = plt.subplot(111, polar=True)
-    ax.plot(theta, r)
-    ax.set_title("Figure 09 — Dial Concept", va="bottom")
-    ax.plot([np.pi / 3, np.pi / 3], [0, 1], linewidth=3)
-    plt.savefig("outputs/figure-9-dial-concept.png", dpi=150, bbox_inches="tight")
+    nodes = {
+        "Signals": (1, 3),
+        "Estimation": (3, 3),
+        "Dial": (5, 3),
+        "Door": (7, 3),
+        "Action": (9, 3),
+    }
+
+    for label, (x, y) in nodes.items():
+        ax.scatter(x, y, s=1200)
+        ax.text(x, y, label, ha="center", va="center", color="white", fontsize=10)
+
+    pairs = [("Signals", "Estimation"), ("Estimation", "Dial"), ("Dial", "Door"), ("Door", "Action")]
+    for a, b in pairs:
+        x1, y1 = nodes[a]
+        x2, y2 = nodes[b]
+        ax.plot([x1, x2], [y1, y2], linewidth=2)
+
+    ax.set_title("Figure 10 — Navigation Overview")
+    ax.set_xlim(0, 10)
+    ax.set_ylim(2, 4)
+    ax.axis("off")
+    plt.savefig("outputs/figure-10-navigation-overview.png", dpi=150, bbox_inches="tight")
     plt.close()
