@@ -1,0 +1,16 @@
+def figure_07_noise_model():
+    t = np.linspace(0, 10, 400)
+    clean = np.sin(2 * np.pi * t)
+    noise = np.random.normal(0, 0.2, len(t))
+    noisy = clean + noise
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(t, clean, label="Clean Signal")
+    plt.plot(t, noisy, label="Noisy Signal", alpha=0.7)
+    plt.title("Figure 07 — Noise Model")
+    plt.xlabel("Time")
+    plt.ylabel("Signal")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("outputs/figure-7-noise-model.png", dpi=150, bbox_inches="tight")
+    plt.close()
