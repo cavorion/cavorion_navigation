@@ -15,3 +15,7 @@ def figure_02_position_grid():
     plt.grid(False)
     plt.savefig("outputs/figure-2-position-grid.png", dpi=150, bbox_inches="tight")
     plt.close()
+    
+if __name__ == "__main__":
+    figure_01_linear_motion()
+    figure_02_position_grid()
