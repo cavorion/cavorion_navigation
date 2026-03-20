@@ -1,16 +1,18 @@
-def figure_03_linear_motion():
-    t = np.linspace(0, 10, 100)
-    x = 5 * t
-    y = 2.5 * t
+def figure_04_reference_stars():
+    stars = {
+        "A": (10, 80),
+        "B": (80, 85),
+        "C": (50, 20),
+    }
 
     plt.figure(figsize=(8, 6))
-    plt.plot(x, y, linewidth=2)
-    plt.scatter(x[0], y[0], label="Start")
-    plt.scatter(x[-1], y[-1], label="End")
-    plt.title("Figure 03 — Linear Motion Progression")
-    plt.xlabel("X Position")
-    plt.ylabel("Y Position")
-    plt.legend()
+    for name, (x, y) in stars.items():
+        plt.scatter(x, y, s=120)
+        plt.text(x + 2, y + 2, name)
+
+    plt.title("Figure 04 — Reference Stars")
+    plt.xlim(0, 100)
+    plt.ylim(0, 100)
     plt.grid(True)
-    plt.savefig("outputs/figure-3-linear-motion.png", dpi=150, bbox_inches="tight")
+    plt.savefig("outputs/figure-4-reference-stars.png", dpi=150, bbox_inches="tight")
     plt.close()
