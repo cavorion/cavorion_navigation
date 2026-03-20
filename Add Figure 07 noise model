@@ -1,16 +1,15 @@
-def figure_07_noise_model():
-    t = np.linspace(0, 10, 400)
-    clean = np.sin(2 * np.pi * t)
-    noise = np.random.normal(0, 0.2, len(t))
-    noisy = clean + noise
+def figure_08_estimation_pass():
+    x_true = np.linspace(0, 100, 50)
+    y_true = 0.6 * x_true + 5
+    y_est = y_true + np.random.normal(0, 3, len(y_true))
 
     plt.figure(figsize=(8, 6))
-    plt.plot(t, clean, label="Clean Signal")
-    plt.plot(t, noisy, label="Noisy Signal", alpha=0.7)
-    plt.title("Figure 07 — Noise Model")
-    plt.xlabel("Time")
-    plt.ylabel("Signal")
+    plt.plot(x_true, y_true, label="True Path")
+    plt.scatter(x_true, y_est, s=18, alpha=0.7, label="Estimated Points")
+    plt.title("Figure 08 — Estimation Pass")
+    plt.xlabel("X Position")
+    plt.ylabel("Y Position")
     plt.legend()
     plt.grid(True)
-    plt.savefig("outputs/figure-7-noise-model.png", dpi=150, bbox_inches="tight")
+    plt.savefig("outputs/figure-8-estimation-pass.png", dpi=150, bbox_inches="tight")
     plt.close()
