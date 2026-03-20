@@ -1,37 +1,14 @@
 # Cavorion Navigation Prototype
 
-This project explores the foundations of autonomous navigation systems as part of Cavorion.
+An early public prototype exploring autonomous navigation concepts, signal-based orientation, and future spacecraft positioning systems.
 
-## Progression
+## Scope
 
-### v0 — Linear Motion
-Basic position + velocity simulation.
+This repository contains lightweight simulations, visuals, and reference figures used to explore the foundations of Cavorion's navigation work.
 
-### v1 — Orientation (Dial)
-Introduced directional control and turning.
+## Current focus
 
-### v2 — Target Seeking
-Navigation toward a single objective.
-
-### v3 — Waypoints
-Sequential mission-based navigation.
-
-### v4 — Obstacle Avoidance
-Reactive avoidance using repulsive forces.
-
-### v5 — Changing Environment
-Dynamic obstacles with continuous decision-making.
-
-![v5](outputs/figure_5.png)
-
-## Architecture
-
-- **Observer**: Position, targets, environment
-- **Dial**: Current orientation
-- **Door**: Decision layer combining goals + constraints
-
-## Run locally
-
-```bash
-pip install -r requirements.txt
-python nav_sim.py
+- signal-based orientation
+- position estimation
+- early navigation simulations
+- visual concept outputs
