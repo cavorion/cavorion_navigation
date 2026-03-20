@@ -1,21 +1,16 @@
-def figure_02_position_grid():
-    x = np.linspace(0, 100, 11)
-    y = np.linspace(0, 100, 11)
+def figure_03_linear_motion():
+    t = np.linspace(0, 10, 100)
+    x = 5 * t
+    y = 2.5 * t
 
     plt.figure(figsize=(8, 6))
-    for xi in x:
-        plt.axvline(xi, color="gray", linewidth=0.5, alpha=0.5)
-    for yi in y:
-        plt.axhline(yi, color="gray", linewidth=0.5, alpha=0.5)
-
-    plt.scatter([42], [58], s=80)
-    plt.title("Figure 02 — Position Grid")
-    plt.xlim(0, 100)
-    plt.ylim(0, 100)
-    plt.grid(False)
-    plt.savefig("outputs/figure-2-position-grid.png", dpi=150, bbox_inches="tight")
+    plt.plot(x, y, linewidth=2)
+    plt.scatter(x[0], y[0], label="Start")
+    plt.scatter(x[-1], y[-1], label="End")
+    plt.title("Figure 03 — Linear Motion Progression")
+    plt.xlabel("X Position")
+    plt.ylabel("Y Position")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("outputs/figure-3-linear-motion.png", dpi=150, bbox_inches="tight")
     plt.close()
-    
-if __name__ == "__main__":
-    figure_01_linear_motion()
-    figure_02_position_grid()
