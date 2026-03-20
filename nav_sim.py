@@ -1,43 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Initial position
-position = np.array([0.0, 0.0])
 
-# Initial direction (unit vector)
-direction = np.array([1.0, 0.0])
+def figure_01_linear_motion():
+    x = [0, 50]
+    y = [0, 25]
 
-# Speed
-speed = 1.0
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y)
+    plt.scatter([x[0]], [y[0]], label="Start")
+    plt.scatter([x[-1]], [y[-1]], label="End")
+    plt.title("Cavorion Navigation Prototype v0")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("outputs/figure-01-linear-motion.png", dpi=150, bbox_inches="tight")
+    plt.close()
 
-# Store trajectory
-trajectory = [position.copy()]
 
-for step in range(50):
-    # Simulate a "turn" over time
-    angle = 0.1  # change this to control turning
-
-    rotation_matrix = np.array([
-        [np.cos(angle), -np.sin(angle)],
-        [np.sin(angle),  np.cos(angle)]
-    ])
-
-    # Rotate direction
-    direction = rotation_matrix @ direction
-
-    # Move spacecraft
-    position = position + direction * speed
-
-    trajectory.append(position.copy())
-
-trajectory = np.array(trajectory)
-
-# Plot
-plt.plot(trajectory[:, 0], trajectory[:, 1])
-plt.scatter(trajectory[0, 0], trajectory[0, 1], label="Start")
-plt.scatter(trajectory[-1, 0], trajectory[-1, 1], label="End")
-
-plt.title("Cavorion Navigation Prototype v1 (Turning)")
-plt.legend()
-plt.grid()
-plt.show()
+if __name__ == "__main__":
+    figure_01_linear_motion()
