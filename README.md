@@ -1,5 +1,7 @@
 # Cavorion Navigation Prototype
 
+COMING SOON
+
 An early public prototype exploring autonomous navigation concepts, signal-based orientation, and future spacecraft positioning systems.
 
 ## Scope
